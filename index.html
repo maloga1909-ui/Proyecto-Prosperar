@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Proyecto Prosperar | Costo de vida en Colombia</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&family=Fraunces:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top"><div class="wrap bar">
+<a class="brand" href="#inicio"><span class="logo">🌿</span>Proyecto Prosperar</a>
+<button class="burger" id="burger" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+<nav class="menu" id="menu" aria-label="Principal"><a href="#ola">La ola de precios</a><a href="#ingresos">Ingresos</a><a href="#medellin">Medellín</a><a href="#arriendo">Arriendo y turismo</a><a href="#datos">Datos curiosos</a></nav>
+</div></header>
+<div class="hero" id="inicio"><div class="wrap">
+<p class="tag">Proyecto Prosperar</p>
+<h1>El costo de vida sube. ¿Quién lo siente más?</h1>
+<p class="lead">Un recorrido interactivo por la inflación, el arriendo y el turismo, con cifras del Observatorio de Desarrollo Económico de Medellín, Apuntes del Cenes e Intercambio.</p>
+<div class="kpis">
+<div class="kpi rv"><b data-to="13.34" data-d="2" data-s="%">13,34%</b><span>IPC anual en marzo de 2023, el máximo reciente</span></div>
+<div class="kpi rv"><b data-to="40.5" data-d="1" data-s="%">40,5%</b><span>de los hogares vivía en arriendo en 2024 (32% en 2008)</span></div>
+<div class="kpi rv"><b data-to="103" data-d="0">103</b><span>índice de arriendo de Medellín en 2024, con Bogotá = 100</span></div>
+<div class="kpi rv"><b data-to="6.4" data-d="1" data-s="%">6,4%</b><span>desocupación en Medellín A.M., jun–ago 2025</span></div>
+</div></div></div>
+
+<section id="ola"><div class="wrap">
+<h2>La ola de precios</h2>
+<p class="intro">Tras la pandemia, la inflación se disparó por cadenas de suministro rotas y la guerra en Ucrania. Con el tiempo dejó de ser un asunto solo de comida y energía.</p>
+<div class="grid">
+<div class="card"><h3>IPC anual en Colombia</h3><div class="chips" id="infChips"></div><div class="ch"><canvas id="cInf"></canvas></div>
+<p class="note">La medida sin alimentos ni energía pasó de 2,85% en 2021 a 10,53% en marzo de 2023. Fuente: DANE, vía Sandoval (2023).</p></div>
+<div class="card"><h3>La respuesta del Banco de la República</h3>
+<p>Para frenar la demanda, el Banco subió su tasa de referencia sin pausa:</p>
+<div class="steps"><span>Sep 2021</span><b>1,75%</b>→<span>Jun 2022</span><b>7,5%</b>→<span>2023</span><b>13,25%</b></div>
+<div class="call">En abril de 2022 la inflación anual llegó a 9,23%, la más alta en 22 años. En mayo de 2021 era 3,30%.</div>
+<p class="note">Fuentes: Vallejo (2022) y Sandoval (2023).</p></div>
+</div></div></section>
+
+<section id="ingresos"><div class="wrap">
+<h2>No todos pagan lo mismo</h2>
+<p class="intro">Los hogares con menos ingresos gastan más de su dinero en alimentos y bienes básicos, así que su inflación personal es mayor.</p>
+<div class="grid">
+<div class="card"><h3>IPC por nivel de ingreso</h3><div class="chips" id="yrChips"></div><div class="ch"><canvas id="cInc"></canvas></div><div class="call" id="incTxt"></div></div>
+<div class="card"><h3>Calculadora de canasta</h3>
+<p>¿Cuánto más costó entre 2019 y 2022 una canasta que hoy imaginas de este valor?</p>
+<input type="range" id="amt" min="500000" max="5000000" step="50000" value="1000000" aria-label="Valor de la canasta en 2019">
+<p><b id="amtV"></b> en 2019</p>
+<div class="res"><div style="background:var(--f2)"><span>Hogar pobre</span><b id="rP"></b><small id="pP"></small></div><div style="background:var(--f1)"><span>Ingresos altos</span><b id="rH"></b><small id="pH"></small></div></div>
+<div class="call" id="rD"></div>
+<p class="note">Estimación que encadena las variaciones anuales de 2020, 2021 y 2022 por nivel de ingreso.</p></div>
+</div></div></section>
+
+<section id="medellin"><div class="wrap">
+<h2>Medellín frente a Colombia</h2>
+<p class="intro">Medellín siguió el ciclo nacional, pero tuvo episodios propios. El rubro de alojamiento, agua, electricidad y gas pesa 33,12% del IPC y fue el gran motor local.</p>
+<div class="grid">
+<div class="card"><h3>IPC anual en momentos clave</h3><div class="ch"><canvas id="cCity"></canvas></div>
+<p class="note">Pasa el cursor sobre cada punto para ver la brecha. Datos puntuales citados por el ODE Medellín (2025).</p></div>
+<div class="card"><h3>Arrendar: Medellín vs. Bogotá</h3>
+<p>Según el Banco de la República, en 2024 arrendar una vivienda equivalente en Medellín costó cerca de 3% más que en Bogotá: unos $30.000 extra por cada $1.000.000 de arriendo.</p>
+<div class="meter rv" style="--w:97.1%"><span>Bogotá</span><div class="track"><i></i></div><b>100</b></div>
+<div class="meter rv alt" style="--w:100%"><span>Medellín</span><div class="track"><i></i></div><b>103</b></div>
+<div class="call">En noviembre de 2021 Medellín llegó a 6,79% de inflación frente a 5,28% nacional, mientras llegaban nómadas digitales y la ocupación hotelera marcaba un récord para un noviembre.</div>
+<p class="note">Los documentos fuente solo detallan Medellín, su comparación con Bogotá y el total nacional.</p></div>
+</div></div></section>
+
+<section id="arriendo"><div class="wrap">
+<h2>Arriendo y turismo</h2>
+<p class="intro">Cada vez más hogares arriendan, y parte de las viviendas se reconvierte en alquiler de corto plazo.</p>
+<div class="grid">
+<div class="card"><h3>¿Cómo vive la gente?</h3><div class="chips" id="rentChips"></div><div class="ch"><canvas id="cRent"></canvas></div><div class="call" id="rentTxt"></div></div>
+<div class="card"><h3>Ocupación hotelera en Medellín</h3><div class="ch"><canvas id="cHotel"></canvas></div>
+<p class="note">Promedio de los meses de noviembre. Fuente: Sistema de Inteligencia Turística de Medellín.</p>
+<h3 style="margin-top:18px">Agosto de 2025</h3>
+<div class="meter rv" style="--w:72.2%"><span>Hoteles</span><div class="track"><i></i></div><b>72,2%</b></div>
+<div class="meter rv alt" style="--w:51.03%"><span>Viviendas turísticas</span><div class="track"><i></i></div><b>51,0%</b></div></div>
+</div></div></section>
+
+<section id="datos"><div class="wrap">
+<h2>¿Sabías que…?</h2>
+<p class="intro">Toca una tarjeta para ver el dato completo.</p>
+<div class="facts" id="facts"></div>
+</div></section>
+
+<footer class="foot"><div class="wrap fgrid">
+<div><a class="brand" href="#inicio"><span class="logo">🌿</span>Proyecto Prosperar</a><p>Datos para entender cómo cambia el costo de vida en Colombia.</p></div>
+<nav aria-label="Secciones"><h4>Explorar</h4><a href="#ola">La ola de precios</a><a href="#ingresos">Ingresos</a><a href="#medellin">Medellín</a><a href="#arriendo">Arriendo y turismo</a><a href="#datos">Datos curiosos</a></nav>
+<div><h4>Fuentes</h4><p>Observatorio de Desarrollo Económico de Medellín, Informe Costo de vida Medellín (oct. 2025).</p><p>Vallejo Zamudio, L. E. (2022), Apuntes del Cenes 41(74).</p><p>Sandoval Becerra, Y. (2023), Intercambio 7.</p></div>
+</div><div class="wrap"><p class="copy">© 2026 Proyecto Prosperar. Las cifras provienen de los documentos citados, con corte distinto en cada uno.</p></div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="script.js" defer></script>
+</body>
+</html>
